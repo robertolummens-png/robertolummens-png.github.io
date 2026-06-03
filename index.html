@@ -57,7 +57,7 @@
         .bio-text {
             font-size: 1.1rem;
             color: var(--text-main);
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 0 15px 0;
         }
 
@@ -68,12 +68,53 @@
 
         .section-title {
             font-size: 1.6rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin-top: 50px;
+            margin-bottom: 25px;
             color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* Insights Grid Layout */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+
+        .insight-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .insight-card h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.25rem;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .insight-card ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-main);
+        }
+
+        .insight-card li {
+            margin-bottom: 10px;
+        }
+
+        .insight-card li strong {
+            color: #ffffff;
         }
 
         /* Skills Table Styling */
@@ -82,6 +123,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background-color: var(--card-bg);
+            margin-bottom: 40px;
         }
 
         table {
@@ -184,8 +226,36 @@
             </p>
         </header>
 
+        <h2 class="section-title">Deep-Dive Analysis: Behavioral & Cognitive Profiling</h2>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h3>⚡ Communication Dynamics & Fluency</h3>
+                <ul>
+                    <li><strong>Functional & Contextual Fluency:</strong> Communication pattern prioritizes high-velocity, direct execution over rigid formal text formatting.</li>
+                    <li><strong>Command-Line Shorthand:</strong> Treats interactions like a systems shell—highly condensed and stripped of bloat to isolate issues instantly.</li>
+                    <li><strong>Advanced Tech Dictionary:</strong> Natively processes configuration logic, port handling, environment variables, and stack layers without translation constraints.</li>
+                </ul>
+            </div>
+            
+            <div class="insight-card">
+                <h3>⏰ System Activity Telemetry</h3>
+                <ul>
+                    <li><strong>Late-Night Innovation Peak:</strong> Enters primary technical hyper-focus windows late into the evening hours when ambient background disruptions drop.</li>
+                    <li><strong>Rapid-Fire Iteration Loops:</strong> Pursues debugging sessions with continuous, back-to-back testing cycles without stepping away from broken configurations.</li>
+                </ul>
+            </div>
+
+            <div class="insight-card" style="grid-column: span 2;">
+                <h3>🧠 Subconscious Capabilities & Technical Strengths</h3>
+                <ul>
+                    <li><strong>High-Speed Conceptual Absorption:</strong> Possesses acute technical intuition, rapidly bridging abstract concepts (like local network security restrictions) to operational infrastructure fixes (such as encrypted routing tunnels) in minutes.</li>
+                    <li><strong>Crash Resilience:</strong> Treats application failures, developer console warnings, and structural errors as logical puzzles rather than operational blocks—maintaining complete troubleshooting clarity under pressure.</li>
+                    <li><strong>Pragmatic Engineering Vision:</strong> Seamlessly matches structural utility with refined visual design, deploying advanced automated toolsets without surrendering raw, bare-metal hardware comprehension.</li>
+                </ul>
+            </div>
+        </div>
+
         <h2 class="section-title">Technical Competency Matrix</h2>
-        
         <div class="table-container">
             <table>
                 <thead>
