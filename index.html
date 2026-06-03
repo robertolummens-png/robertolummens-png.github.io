@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Portfolio & Home Lab Hub</title>
+    <title>Robbe Lummens | Systems & Infrastructure Portfolio</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -12,7 +12,11 @@
             --text-main: #c9d1d9;
             --text-muted: #8b949e;
             --border-color: #30363d;
-            --success-color: #238636;
+            
+            /* Skill Level Colors */
+            --advanced: #56d364;
+            --intermediate: #e3b341;
+            --beginner: #8b949e;
         }
 
         body {
@@ -25,146 +29,125 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         header {
-            text-align: center;
             padding-bottom: 40px;
             border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
         }
 
         .profile-title {
-            font-size: 2.5rem;
-            margin: 10px 0 5px 0;
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
             color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         .profile-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--accent-color);
-            margin: 0 0 15px 0;
+            margin: 0 0 20px 0;
             font-weight: 400;
         }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            background-color: rgba(35, 134, 54, 0.15);
-            color: #56d364;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .bio-text {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 0 15px 0;
+        }
+
+        .bio-highlight {
+            color: #ffffff;
             font-weight: 500;
-            border: 1px solid rgba(56, 139, 60, 0.4);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #56d364;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: blink 2s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 0.4; }
-            50% { opacity: 1; }
-            100% { opacity: 0.4; }
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-top: 40px;
             margin-bottom: 20px;
             color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-        }
-
-        .card {
-            background-color: var(--card-bg);
+        /* Skills Table Styling */
+        .table-container {
+            overflow-x: auto;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
+            border-radius: 8px;
+            background-color: var(--card-bg);
         }
 
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
         }
 
-        .card h3 {
-            margin-top: 0;
+        th, td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #1f242c;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(88, 166, 255, 0.03);
+        }
+
+        .domain-name {
+            font-weight: 600;
             color: #ffffff;
         }
 
-        .tag {
+        /* Badge Pills */
+        .badge {
             display: inline-block;
-            background-color: #21262d;
-            border: 1px solid var(--border-color);
-            padding: 2px 8px;
+            padding: 4px 10px;
             border-radius: 12px;
             font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-advanced {
+            background-color: rgba(86, 211, 100, 0.15);
+            color: var(--advanced);
+            border: 1px solid rgba(86, 211, 100, 0.3);
+        }
+
+        .badge-intermediate {
+            background-color: rgba(227, 179, 65, 0.15);
+            color: var(--intermediate);
+            border: 1px solid rgba(227, 179, 65, 0.3);
+        }
+
+        .badge-beginner {
+            background-color: rgba(139, 148, 158, 0.15);
             color: var(--text-muted);
+            border: 1px solid rgba(139, 148, 158, 0.3);
         }
 
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .project-item {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-info h4 {
-            margin: 0 0 5px 0;
-            color: #ffffff;
-        }
-
-        .project-info p {
-            margin: 0;
+        .status-text {
             font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .btn {
-            background-color: #21262d;
-            color: var(--accent-color);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            background-color: #30363d;
         }
 
         footer {
@@ -183,63 +166,88 @@
         }
     </style>
 
+    <!-- KEEP YOUR UMAMI TRACKING SCRIPT HERE -->
     <script defer src="https://spicy-parks-turn.loca.lt/script.js" data-website-id="d0ac6284-c341-4cfa-8c84-9fefbf5cfcd9"></script>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <div class="status-badge">
-                <div class="status-dot"></div> Local Lab Online
-            </div>
             <h1 class="profile-title">Robbe Lummens</h1>
-            <p class="profile-subtitle">IT Student & HomeLab Enthusiast</p>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-                Focused on infrastructure environments, containerization, and physical system optimization. Building out hardware deployments and learning self-hosted networks.
+            <p class="profile-subtitle">Information Technology Student & Home Lab Practitioner</p>
+            
+            <p class="bio-text">
+                Hello, world! I am an <span class="bio-highlight">18-year-old IT student</span> with a deep fascination for computer hardware configurations, containerized infrastructure, and self-hosted environments. 
+            </p>
+            <p class="bio-text">
+                Instead of just studying theory, I spend my time building, managing, and maintaining bare-metal deployments. From compiling hardware to testing local analytics pipelines like Umami, I like knowing exactly how packets move and how systems interact under the hood. My ultimate goal is to dive deep into <span class="bio-highlight">Network Engineering</span> and scale local projects into production environments.
             </p>
         </header>
 
-        <h2 class="section-title">Technical Focus Areas</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Hardware Systems</h3>
-                <p>Advanced diagnostic processing, custom performance component configuration, and physical server assembly optimization.</p>
-                <span class="tag">Motherboards</span>
-                <span class="tag">BIOS Flashback</span>
-                <span class="tag">RAID Arrays</span>
-            </div>
-            <div class="card">
-                <h3>Containerization & OS</h3>
-                <p>Deploying isolated sandboxes, internal environments, and self-hosted utilities utilizing modern hypervisors and Unix structures.</p>
-                <span class="tag">Docker Compose</span>
-                <span class="tag">Linux CLI</span>
-                <span class="tag">TrueNAS</span>
-            </div>
-        </div>
-
-        <h2 class="section-title">Active Lab Projects</h2>
-        <div class="project-list">
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>Umami Analytics Node</h4>
-                    <p>Self-hosted, database-backed tracking pipeline handling live reporting from remote static endpoints over reverse tunnels.</p>
-                </div>
-                <span class="btn">Active</span>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>Enterprise Tower Deployment</h4>
-                    <p>Configuring a dedicated hardware server environment to host localized media arrays and network monitoring nodes.</p>
-                </div>
-                <span class="btn">Building</span>
-            </div>
+        <h2 class="section-title">Technical Competency Matrix</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Core Competencies & Scope</th>
+                        <th>Proficiency</th>
+                        <th>Execution Capabilities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="domain-name">Hardware Systems</td>
+                        <td>PC building, precise hardware troubleshooting, components configuration, BIOS flashback management.</td>
+                        <td><span class="badge badge-advanced">Advanced</span></td>
+                        <td class="status-text">Fully autonomous physical assembly and system debugging.</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Languages</td>
+                        <td>Conversational fluency to collaborate effectively in diverse workspaces.</td>
+                        <td><span class="badge badge-advanced">Advanced</span></td>
+                        <td class="status-text">Bilingual communication capabilities (Spanish / Dutch).</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Docker</td>
+                        <td>Container deployment structures, Docker Compose setups, local volume persistence.</td>
+                        <td><span class="badge badge-intermediate">Intermediate</span></td>
+                        <td class="status-text">Can deploy self-hosted nodes; expanding into production logging.</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Linux Environments</td>
+                        <td>Basic system familiarity, CLI shell navigation, environment orchestration (Ubuntu/TrueNAS).</td>
+                        <td><span class="badge badge-intermediate">Intermediate</span></td>
+                        <td class="status-text">Comfortable handling installations via command line setups.</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Networking</td>
+                        <td>Local router configurations, port structures, reverse connectivity tunnels.</td>
+                        <td><span class="badge badge-beginner">Beginner</span></td>
+                        <td class="status-text">Manages homelab routing setups; target area for network engineering studies.</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Version Control</td>
+                        <td>Basic Git repositories management, single-developer remote source matching.</td>
+                        <td><span class="badge badge-beginner">Beginner</span></td>
+                        <td class="status-text">Managing personal source files directly via GitHub actions.</td>
+                    </tr>
+                    <tr>
+                        <td class="domain-name">Development & DevOps</td>
+                        <td>AI assistance workflows, scripting architectures, pipeline monitoring.</td>
+                        <td><span class="badge badge-beginner">Beginner</span></td>
+                        <td class="status-text">Leveraging modern AI strategies to accelerate deployment code.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <footer>
-            <p>Managed locally via Git. Tracked via custom telemetry.</p>
+            <p>Monitored through a secure LocalTunnel framework. Kept decentralized.</p>
             <p>
-                <a href="https://github.com/robertolummens-png" target="_blank">GitHub</a> • 
-                <a href="mailto:your-email@example.com">Contact</a>
+                <a href="https://github.com/robertolummens-png" target="_blank">GitHub Profile</a> • 
+                <a href="mailto:your-email@example.com">Direct Contact</a>
             </p>
         </footer>
     </div>
