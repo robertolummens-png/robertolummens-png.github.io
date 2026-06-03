@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robbe Lummens | Systems & Infrastructure Portfolio</title>
+    <title>About Me | Robbe Lummens</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -13,7 +13,6 @@
             --text-muted: #8b949e;
             --border-color: #30363d;
             
-            /* Skill Level Colors */
             --advanced: #56d364;
             --intermediate: #e3b341;
             --beginner: #8b949e;
@@ -29,13 +28,13 @@
         }
 
         .container {
-            max-width: 950px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         header {
-            padding-bottom: 40px;
+            padding-bottom: 30px;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 40px;
         }
@@ -48,73 +47,60 @@
         }
 
         .profile-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--accent-color);
             margin: 0 0 20px 0;
             font-weight: 400;
         }
 
-        .bio-text {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            max-width: 850px;
-            margin: 0 0 15px 0;
+        .bio-section {
+            margin-bottom: 40px;
         }
 
-        .bio-highlight {
-            color: #ffffff;
-            font-weight: 500;
+        .bio-text {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin: 0 0 20px 0;
         }
 
         .section-title {
-            font-size: 1.6rem;
-            margin-top: 50px;
-            margin-bottom: 25px;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
             color: #ffffff;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
         }
 
-        /* Insights Grid Layout */
-        .insights-grid {
+        /* Insights Cards */
+        .human-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 20px;
             margin-bottom: 40px;
         }
 
         @media (max-width: 768px) {
-            .insights-grid { grid-template-columns: 1fr; }
+            .human-grid { grid-template-columns: 1fr; }
         }
 
-        .insight-card {
+        .human-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px;
         }
 
-        .insight-card h3 {
+        .human-card h3 {
             margin-top: 0;
             color: #ffffff;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.15rem;
         }
 
-        .insight-card ul {
+        .human-card p {
             margin: 0;
-            padding-left: 20px;
+            font-size: 1rem;
             color: var(--text-main);
-        }
-
-        .insight-card li {
-            margin-bottom: 10px;
-        }
-
-        .insight-card li strong {
-            color: #ffffff;
         }
 
         /* Skills Table Styling */
@@ -123,7 +109,6 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background-color: var(--card-bg);
-            margin-bottom: 40px;
         }
 
         table {
@@ -142,55 +127,23 @@
             background-color: #1f242c;
             color: #ffffff;
             font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         tr:last-child td {
             border-bottom: none;
         }
 
-        tr:hover td {
-            background-color: rgba(88, 166, 255, 0.03);
-        }
-
-        .domain-name {
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        /* Badge Pills */
         .badge {
             display: inline-block;
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 600;
-            text-transform: uppercase;
         }
 
-        .badge-advanced {
-            background-color: rgba(86, 211, 100, 0.15);
-            color: var(--advanced);
-            border: 1px solid rgba(86, 211, 100, 0.3);
-        }
-
-        .badge-intermediate {
-            background-color: rgba(227, 179, 65, 0.15);
-            color: var(--intermediate);
-            border: 1px solid rgba(227, 179, 65, 0.3);
-        }
-
-        .badge-beginner {
-            background-color: rgba(139, 148, 158, 0.15);
-            color: var(--text-muted);
-            border: 1px solid rgba(139, 148, 158, 0.3);
-        }
-
-        .status-text {
-            font-size: 0.9rem;
-        }
+        .badge-advanced { background-color: rgba(86, 211, 100, 0.15); color: var(--advanced); border: 1px solid rgba(86, 211, 100, 0.3); }
+        .badge-intermediate { background-color: rgba(227, 179, 65, 0.15); color: var(--intermediate); border: 1px solid rgba(227, 179, 65, 0.3); }
+        .badge-beginner { background-color: rgba(139, 148, 158, 0.15); color: var(--text-muted); border: 1px solid rgba(139, 148, 158, 0.3); }
 
         footer {
             margin-top: 60px;
@@ -215,109 +168,84 @@
 
     <div class="container">
         <header>
-            <h1 class="profile-title">Robbe Lummens</h1>
-            <p class="profile-subtitle">Information Technology Student & Home Lab Practitioner</p>
-            
-            <p class="bio-text">
-                Hello, world! I am an <span class="bio-highlight">18-year-old IT student</span> with a deep fascination for computer hardware configurations, containerized infrastructure, and self-hosted environments. 
-            </p>
-            <p class="bio-text">
-                Instead of just studying theory, I spend my time building, managing, and maintaining bare-metal deployments. From compiling hardware to testing local analytics pipelines like Umami, I like knowing exactly how packets move and how systems interact under the hood. My ultimate goal is to dive deep into <span class="bio-highlight">Network Engineering</span> and scale local projects into production environments.
-            </p>
+            <h1 class="profile-title">Hi, I'm Robbe.</h1>
+            <p class="profile-subtitle">IT Student, Hardware Builder & Tech Problem Solver</p>
         </header>
 
-        <h2 class="section-title">Deep-Dive Analysis: Behavioral & Cognitive Profiling</h2>
-        <div class="insights-grid">
-            <div class="insight-card">
-                <h3>⚡ Communication Dynamics & Fluency</h3>
-                <ul>
-                    <li><strong>Functional & Contextual Fluency:</strong> Communication pattern prioritizes high-velocity, direct execution over rigid formal text formatting.</li>
-                    <li><strong>Command-Line Shorthand:</strong> Treats interactions like a systems shell—highly condensed and stripped of bloat to isolate issues instantly.</li>
-                    <li><strong>Advanced Tech Dictionary:</strong> Natively processes configuration logic, port handling, environment variables, and stack layers without translation constraints.</li>
-                </ul>
-            </div>
-            
-            <div class="insight-card">
-                <h3>⏰ System Activity Telemetry</h3>
-                <ul>
-                    <li><strong>Late-Night Innovation Peak:</strong> Enters primary technical hyper-focus windows late into the evening hours when ambient background disruptions drop.</li>
-                    <li><strong>Rapid-Fire Iteration Loops:</strong> Pursues debugging sessions with continuous, back-to-back testing cycles without stepping away from broken configurations.</li>
-                </ul>
-            </div>
+        <div class="bio-section">
+            <p class="bio-text">
+                I’m an 18-year-old student from Belgium with a genuine love for taking things apart, figuring out how they work, and building them back better. Whether it’s physically piecing together a powerful computer workstation, reviving a broken server component, or setting up software containers at home, I like being entirely hands-on.
+            </p>
+            <p class="bio-text">
+                Outside of my technical studies, I am incredibly passionate about music. I manage an extensive local music library of over 17,000 tracks, obsessing over perfect metadata organization so I can sync it cleanly to retro hardware like classic iPods. I also enjoy modifying heavy performance games, learning new languages like Spanish, and taking care of the technology my family relies on every day. My plan is to take this passion for solving puzzles into Network Engineering next.
+            </p>
+        </div>
 
-            <div class="insight-card" style="grid-column: span 2;">
-                <h3>🧠 Subconscious Capabilities & Technical Strengths</h3>
-                <ul>
-                    <li><strong>High-Speed Conceptual Absorption:</strong> Possesses acute technical intuition, rapidly bridging abstract concepts (like local network security restrictions) to operational infrastructure fixes (such as encrypted routing tunnels) in minutes.</li>
-                    <li><strong>Crash Resilience:</strong> Treats application failures, developer console warnings, and structural errors as logical puzzles rather than operational blocks—maintaining complete troubleshooting clarity under pressure.</li>
-                    <li><strong>Pragmatic Engineering Vision:</strong> Seamlessly matches structural utility with refined visual design, deploying advanced automated toolsets without surrendering raw, bare-metal hardware comprehension.</li>
-                </ul>
+        <h2 class="section-title">A Bit About How I Work</h2>
+        <div class="human-grid">
+            <div class="human-card">
+                <h3>🗣️ How We Talk</h3>
+                <p>When I communicate, I don't care about fancy filler words or textbook grammar rules. I type fast, get straight to the point, and speak the natural shorthand language of someone who just wants to fix the problem. My English vocabulary for tech concepts is incredibly sharp.</p>
+            </div>
+            <div class="human-card">
+                <h3>🌙 The Late-Night Focus</h3>
+                <p>I do some of my absolute best thinking and building late at night. When the house is quiet, I get completely locked into a technical puzzle—like a broken server connection or a network error—and I don't give up or walk away until it's completely working.</p>
+            </div>
+            <div class="human-card" style="grid-column: span 2;">
+                <h3>💪 Strengths I Bring to the Table</h3>
+                <p>I have an incredibly fast intuition for how abstract digital systems connect to physical hardware. When something crashes or throws a red error screen, I don't panic or get overwhelmed. I treat it like a game or a puzzle, immediately diving into the logs to find the root cause. I learn by doing, skipping the boring theoretical slide decks to build real, functional setups from scratch.</p>
             </div>
         </div>
 
-        <h2 class="section-title">Technical Competency Matrix</h2>
+        <h2 class="section-title">My Skills Baseline</h2>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Domain</th>
-                        <th>Core Competencies & Scope</th>
-                        <th>Proficiency</th>
-                        <th>Execution Capabilities</th>
+                        <th>What I Do</th>
+                        <th>What it actually means</th>
+                        <th>My Level</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="domain-name">Hardware Systems</td>
-                        <td>PC building, precise hardware troubleshooting, components configuration, BIOS flashback management.</td>
+                        <td><strong>PC & Server Hardware</strong></td>
+                        <td>Building computers from scratch, swapping parts, fixing physical components, and troubleshooting motherboard systems.</td>
                         <td><span class="badge badge-advanced">Advanced</span></td>
-                        <td class="status-text">Fully autonomous physical assembly and system debugging.</td>
                     </tr>
                     <tr>
-                        <td class="domain-name">Languages</td>
-                        <td>Conversational fluency to collaborate effectively in diverse workspaces.</td>
+                        <td><strong>Languages</strong></td>
+                        <td>Fluent in Dutch, and highly capable of holding conversations and working in Spanish environments.</td>
                         <td><span class="badge badge-advanced">Advanced</span></td>
-                        <td class="status-text">Bilingual communication capabilities (Spanish / Dutch).</td>
                     </tr>
                     <tr>
-                        <td class="domain-name">Docker</td>
-                        <td>Container deployment structures, Docker Compose setups, local volume persistence.</td>
+                        <td><strong>Docker Containers</strong></td>
+                        <td>Spinning up self-hosted software nodes (like this analytics project) so they run smoothly in their own isolated spaces.</td>
                         <td><span class="badge badge-intermediate">Intermediate</span></td>
-                        <td class="status-text">Can deploy self-hosted nodes; expanding into production logging.</td>
                     </tr>
                     <tr>
-                        <td class="domain-name">Linux Environments</td>
-                        <td>Basic system familiarity, CLI shell navigation, environment orchestration (Ubuntu/TrueNAS).</td>
+                        <td><strong>Linux Command Line</strong></td>
+                        <td>Navigating server operating systems using purely commands instead of a mouse and a desktop interface.</td>
                         <td><span class="badge badge-intermediate">Intermediate</span></td>
-                        <td class="status-text">Comfortable handling installations via command line setups.</td>
                     </tr>
                     <tr>
-                        <td class="domain-name">Networking</td>
-                        <td>Local router configurations, port structures, reverse connectivity tunnels.</td>
-                        <td><span class="badge badge-beginner">Beginner</span></td>
-                        <td class="status-text">Manages homelab routing setups; target area for network engineering studies.</td>
+                        <td><strong>Home Networking</strong></td>
+                        <td>Managing how data moves around my house, setting up secure traffic ports, and routing connections.</td>
+                        <td><span class="badge badge-beginner">Growing</span></td>
                     </tr>
                     <tr>
-                        <td class="domain-name">Version Control</td>
-                        <td>Basic Git repositories management, single-developer remote source matching.</td>
-                        <td><span class="badge badge-beginner">Beginner</span></td>
-                        <td class="status-text">Managing personal source files directly via GitHub actions.</td>
-                    </tr>
-                    <tr>
-                        <td class="domain-name">Development & DevOps</td>
-                        <td>AI assistance workflows, scripting architectures, pipeline monitoring.</td>
-                        <td><span class="badge badge-beginner">Beginner</span></td>
-                        <td class="status-text">Leveraging modern AI strategies to accelerate deployment code.</td>
+                        <td><strong>Git & Development</strong></td>
+                        <td>Using version control to back up my code files and deploying smart AI tools to speed up my build process.</td>
+                        <td><span class="badge badge-beginner">Growing</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <footer>
-            <p>Monitored through a secure LocalTunnel framework. Kept decentralized.</p>
+            <p>Built by hand. Powered by a home lab.</p>
             <p>
-                <a href="https://github.com/robertolummens-png" target="_blank">GitHub Profile</a> • 
-                <a href="mailto:your-email@example.com">Direct Contact</a>
+                <a href="https://github.com/robertolummens-png" target="_blank">My GitHub</a>
             </p>
         </footer>
     </div>
