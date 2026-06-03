@@ -293,7 +293,41 @@
                 </tbody>
             </table>
         </div>
+<h2 class="section-title">Explore My Hub</h2>
+<div style="
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin-top: 20px;
+">
+    <!-- Card 1: Documentation Link -->
+    <a href="documentation.html" style="
+        text-decoration: none;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.2s, border-color 0.2s;
+    " onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
+       onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+        <h3 style="margin: 0 0 10px 0; color: #ffffff;">📄 System Documentation</h3>
+        <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">Detailed guides, configuration notes, and build logs for my server environments.</p>
+    </a>
 
+    <!-- Card 2: Gallery Link -->
+    <a href="photos.html" style="
+        text-decoration: none;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.2s, border-color 0.2s;
+    " onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
+       onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+        <h3 style="margin: 0 0 10px 0; color: #ffffff;">📸 Hardware Gallery</h3>
+        <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">A visual showcase of my physical workstation setups, server internals, and retro mods.</p>
+    </a>
+</div>
         <footer>
             <p>Built by hand. Powered by a home lab.</p>
             <p>
