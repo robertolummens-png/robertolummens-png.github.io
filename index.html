@@ -3,12 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Free Website</title>
-    
+    <title>Tech Portfolio & Home Lab Hub</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #58a6ff;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+            --success-color: #238636;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-title {
+            font-size: 2.5rem;
+            margin: 10px 0 5px 0;
+            color: #ffffff;
+        }
+
+        .profile-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin: 0 0 15px 0;
+            font-weight: 400;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(35, 134, 54, 0.15);
+            color: #56d364;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(56, 139, 60, 0.4);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #56d364;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-info h4 {
+            margin: 0 0 5px 0;
+            color: #ffffff;
+        }
+
+        .project-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            background-color: #21262d;
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #30363d;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+
     <script defer src="https://spicy-parks-turn.loca.lt/script.js" data-website-id="d0ac6284-c341-4cfa-8c84-9fefbf5cfcd9"></script>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my website hosted completely free on GitHub Pages.</p>
+
+    <div class="container">
+        <header>
+            <div class="status-badge">
+                <div class="status-dot"></div> Local Lab Online
+            </div>
+            <h1 class="profile-title">Robbe Lummens</h1>
+            <p class="profile-subtitle">IT Student & HomeLab Enthusiast</p>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                Focused on infrastructure environments, containerization, and physical system optimization. Building out hardware deployments and learning self-hosted networks.
+            </p>
+        </header>
+
+        <h2 class="section-title">Technical Focus Areas</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hardware Systems</h3>
+                <p>Advanced diagnostic processing, custom performance component configuration, and physical server assembly optimization.</p>
+                <span class="tag">Motherboards</span>
+                <span class="tag">BIOS Flashback</span>
+                <span class="tag">RAID Arrays</span>
+            </div>
+            <div class="card">
+                <h3>Containerization & OS</h3>
+                <p>Deploying isolated sandboxes, internal environments, and self-hosted utilities utilizing modern hypervisors and Unix structures.</p>
+                <span class="tag">Docker Compose</span>
+                <span class="tag">Linux CLI</span>
+                <span class="tag">TrueNAS</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Active Lab Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>Umami Analytics Node</h4>
+                    <p>Self-hosted, database-backed tracking pipeline handling live reporting from remote static endpoints over reverse tunnels.</p>
+                </div>
+                <span class="btn">Active</span>
+            </div>
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>Enterprise Tower Deployment</h4>
+                    <p>Configuring a dedicated hardware server environment to host localized media arrays and network monitoring nodes.</p>
+                </div>
+                <span class="btn">Building</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Managed locally via Git. Tracked via custom telemetry.</p>
+            <p>
+                <a href="https://github.com/robertolummens-png" target="_blank">GitHub</a> • 
+                <a href="mailto:your-email@example.com">Contact</a>
+            </p>
+        </footer>
+    </div>
+
 </body>
 </html>
