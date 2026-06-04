@@ -72,7 +72,7 @@
             padding-bottom: 8px;
         }
 
-        /* Insights Cards */
+        /* Insights Cards Grid */
         .human-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -84,23 +84,16 @@
             .human-grid { grid-template-columns: 1fr; }
         }
 
-        .human-card {
-            background-color: var(--card-bg);
+        /* Card Link Standard Wrapper styling */
+        .card-link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px;
-        }
-
-        .human-card h3 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 1.15rem;
-        }
-
-        .human-card p {
-            margin: 0;
-            font-size: 1rem;
-            color: var(--text-main);
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         /* Skills Table Styling */
@@ -161,57 +154,55 @@
         }
     </style>
 
-    <!-- KEEP YOUR UMAMI TRACKING SCRIPT HERE -->
     <script defer src="https://spicy-parks-turn.loca.lt/script.js" data-website-id="d0ac6284-c341-4cfa-8c84-9fefbf5cfcd9"></script>
 </head>
 <body>
-    <!-- Card 1: Documentation Link -->
-    <a href="documentation.html" style="
-        text-decoration: none;
-        background: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.2s, border-color 0.2s;
-    " onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-       onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-        <h3 style="margin: 0 0 10px 0; color: #ffffff;">📄 System Documentation</h3>
-        <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">Detailed guides, configuration notes, and build logs for my server environments.</p>
-    </a>
 
-    <!-- Card 2: Gallery Link -->
-    <a href="photos.html" style="
-        text-decoration: none;
-        background: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.2s, border-color 0.2s;
-    " onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-       onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-        <h3 style="margin: 0 0 10px 0; color: #ffffff;">📸 Hardware Gallery</h3>
-        <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">A visual showcase of my physical workstation setups, server internals, and retro mods.</p>
-    </a>
+    <div class="container">
+        
+        <header>
+            <h1 class="profile-title">Robbe Lummens</h1>
+            <p class="profile-subtitle">Systems & Home Lab Enthusiast</p>
+        </header>
 
-      <a href="hardware.html" style="
-        text-decoration: none;
-        background: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.2s, border-color 0.2s;
-    " onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-       onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-        <h3 style="margin: 0 0 10px 0; color: #ffffff;">Hardware I currently own</h3>
-        <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">An overview of all of the hardware I currently own</p>
-    </a>
+        <section class="bio-section">
+            <p class="bio-text">Welcome to my personal dashboard. Below you can find documentation, system configurations, and a look into my hardware landscape.</p>
+        </section>
 
-    <footer>
+        <h2 class="section-title">Navigation & Projects</h2>
+        
+        <div class="human-grid">
+            
+            <a href="documentation.html" class="card-link" 
+               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">📄 System Documentation</h3>
+                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">Detailed guides, configuration notes, and build logs for my server environments.</p>
+            </a>
+
+            <a href="photos.html" class="card-link" 
+               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">📸 Hardware Gallery</h3>
+                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">A visual showcase of my physical workstation setups, server internals, and retro mods.</p>
+            </a>
+
+            <a href="hardware.html" class="card-link" 
+               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                <h3 style="margin: 0 0 10px 0; color: #ffffff;">🛠️ Current Hardware</h3>
+                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">An updated overview and spec sheet of all the server and desktop hardware I currently own.</p>
+            </a>
+
+        </div>
+
+        <footer>
             <p>Built by hand. Powered by a home lab.</p>
             <p>
                 <a href="https://github.com/robertolummens-png" target="_blank">My GitHub</a>
             </p>
         </footer>
+
     </div>
 
 </body>
