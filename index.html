@@ -6,10 +6,10 @@
     <title>My Capabilities Demo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f9;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,10 +17,10 @@
         }
         .container {
             max-width: 800px;
-            background-color: white;
+            background-color: #fff;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
         }
         h1 {
@@ -41,18 +41,54 @@
             background-color: #28a745;
             color: white;
             padding: 15px 30px;
-            border-radius: 10px;
+            border-radius: 20px;
             font-size: 1.2em;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 8px 16px rgba(40, 167, 69, 0.2);
         }
         @keyframes glow {
             from { text-shadow: 0 0 5px #28a745; }
             to { text-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745; }
+        }
+
+        .info-container {
+            margin-top: 60px;
+            text-align: left;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .info-container h2 {
+            color: #333;
+            font-size: 2em;
+        }
+        .info-container p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -75,14 +111,16 @@
     <h2>JavaScript Functionality</h2>
     <p>The buttons use JavaScript to dynamically change their content and toggle background colors.</p>
 
-    <h2>Contact Information</h2>
-    <form action="#" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <button type="submit" class="btn">Submit</button>
-    </form>
+    <div class="info-container">
+        <h2>Contact Information</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
 
 </div>
 
@@ -94,10 +132,10 @@ function changeText() {
 
 function toggleColors() {
     var container = document.querySelector('.container');
-    if (container.style.backgroundColor === 'white') {
-        container.style.backgroundColor = '#3498db';
+    if (container.style.backgroundColor === '#f4f4f9') {
+        container.style.backgroundColor = '#e0e0e0';
     } else {
-        container.style.backgroundColor = 'white';
+        container.style.backgroundColor = '#f4f4f9';
     }
 }
 </script>
