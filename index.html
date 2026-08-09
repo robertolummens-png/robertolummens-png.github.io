@@ -3,220 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robbe Lummens</title>
+    <title>My Capabilities Demo</title>
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --border-color: #30363d;
-            
-            --advanced: #56d364;
-            --intermediate: #e3b341;
-            --beginner: #8b949e;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        header {
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-        }
-
-        .profile-title {
-            font-size: 2.8rem;
-            margin: 0 0 10px 0;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-        }
-
-        .profile-subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-color);
-            margin: 0 0 20px 0;
-            font-weight: 400;
-        }
-
-        .bio-section {
-            margin-bottom: 40px;
-        }
-
-        .bio-text {
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin: 0 0 20px 0;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-
-        /* Insights Cards Grid */
-        .human-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .human-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Card Link Standard Wrapper styling */
-        .card-link {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
             padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
-        /* Skills Table Styling */
-        .table-container {
-            overflow-x: auto;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--card-bg);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            padding: 14px 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background-color: #1f242c;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .badge-advanced { background-color: rgba(86, 211, 100, 0.15); color: var(--advanced); border: 1px solid rgba(86, 211, 100, 0.3); }
-        .badge-intermediate { background-color: rgba(227, 179, 65, 0.15); color: var(--intermediate); border: 1px solid rgba(227, 179, 65, 0.3); }
-        .badge-beginner { background-color: rgba(139, 148, 158, 0.15); color: var(--text-muted); border: 1px solid rgba(139, 148, 158, 0.3); }
-
-        footer {
-            margin-top: 60px;
+        .container {
+            max-width: 800px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
         }
-
-        footer a {
-            color: var(--accent-color);
+        h1 {
+            color: #333;
+            font-size: 3em;
+            animation: glow 2s infinite;
+        }
+        p {
+            color: #666;
+            font-size: 1.5em;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2em;
             text-decoration: none;
-            margin: 0 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3);
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #28a745; }
+            to { text-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745; }
         }
     </style>
-
-    <script defer src="https://spicy-parks-turn.loca.lt/script.js" data-website-id="d0ac6284-c341-4cfa-8c84-9fefbf5cfcd9"></script>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header>
-            <h1 class="profile-title">Robbe Lummens</h1>
-            <p class="profile-subtitle">Home Lab Enthusiast</p>
-        </header>
+<div class="container">
+    <h1>My Capabilities Demo</h1>
+    <p>This page showcases some advanced features of HTML, CSS, and JavaScript.</p>
 
-        <section class="bio-section">
-            <h2><strong>THIS IS AN EXPERIMENTAL SITE</strong></h2>
-            <p class="bio-text">Welcome to my personal dashboard. Below you can find documentation, system configurations, and a look into my hardware landscape. text made by gemini</p>
-        </section>
-
-        <h2 class="section-title">Navigation & Projects</h2>
-        
-        <div class="human-grid">
-            
-            <a href="documentation.html" class="card-link" 
-               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-                <h3 style="margin: 0 0 10px 0; color: #ffffff;">📄 System Documentation</h3>
-                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">Detailed guides, configuration notes, and build logs for my server environments.</p>
-            </a>
-
-            <a href="photos.html" class="card-link" 
-               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-                <h3 style="margin: 0 0 10px 0; color: #ffffff;">📸 Hardware Gallery</h3>
-                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">A visual showcase of my physical workstation setups, server internals, and retro mods.</p>
-            </a>
-
-            <a href="hardware.html" class="card-link" 
-               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-                <h3 style="margin: 0 0 10px 0; color: #ffffff;">🛠️ Current Hardware</h3>
-                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">An updated overview and spec sheet of all the server and desktop hardware I currently own.</p>
-            </a>
-            <a href="blog.html" class="card-link" 
-               onmouseover="this.style.borderColor='#58a6ff'; this.style.transform='translateY(-2px)'" 
-               onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
-                <h3 style="margin: 0 0 10px 0; color: #ffffff;">My own blog</h3>
-                <p style="margin: 0; color: #8b949e; font-size: 0.95rem;">A personal or non personal blog</p>
-            </a>
-
-            </div>
-        <section>
-            <img src="https://i.pinimg.com/736x/d8/d5/ab/d8d5ab238cd55b0ed3aa27f06c89ebfd.jpg" alt="foto 1"
-
-                
-                </section>
-                
-        
-        <footer>
-            <p>experimental website</p>
-            <p>
-                <a href="https://github.com/robbelummens" target="_blank">My GitHub</a>
-            </p>
-        </footer>
-
+    <div class="button-container">
+        <button onclick="changeText()" class="btn">Change Text Below</button>
+        <button onclick="toggleColors()" class="btn">Toggle Background Colors</button>
     </div>
+    
+    <p id="textToChange" style="font-size: 2em;">Click buttons to interact with this page!</p>
+
+    <h2>CSS Animations</h2>
+    <p>Check out the glowing effect on the title!</p>
+
+    <h2>JavaScript Functionality</h2>
+    <p>The buttons use JavaScript to dynamically change their content and toggle background colors.</p>
+
+    <h2>Contact Information</h2>
+    <form action="#" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+
+</div>
+
+<script>
+function changeText() {
+    var textElement = document.getElementById('textToChange');
+    textElement.innerHTML = 'The text has been changed!';
+}
+
+function toggleColors() {
+    var container = document.querySelector('.container');
+    if (container.style.backgroundColor === 'white') {
+        container.style.backgroundColor = '#3498db';
+    } else {
+        container.style.backgroundColor = 'white';
+    }
+}
+</script>
 
 </body>
 </html>
